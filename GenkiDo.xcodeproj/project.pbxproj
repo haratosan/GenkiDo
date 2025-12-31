@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		048F5A7F5A5508964332E8B2 /* DayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94CB736085E5322579D614 /* DayRecord.swift */; };
+		0EC0D8917E34F45F6BC764CF /* GenkiDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */; };
+		113E1489B914B43FAA3D1947 /* GenkiDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711D1587BF4116F7E8CD812 /* GenkiDoApp.swift */; };
+		1E04FC99F77EF45C6EF6F31F /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EAA4AAA2D2A029BDA7360 /* Meal.swift */; };
+		1ED1D241139DAACDB3721F86 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D2E0CF603D645056070DED /* CloudKitService.swift */; };
+		322EEFB1711E638FEF9EE1D6 /* GenkiDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AF75B480591C776F43B92 /* GenkiDoTests.swift */; };
+		525171BA2A03F026B4779640 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7080B7B7C90B03C3BE202154 /* ProgressRing.swift */; };
+		5DAA230E08A2169CB0E7450D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3D617A02B4D06D700B0318 /* Assets.xcassets */; };
+		6A16B7E912D288A870232F77 /* ExerciseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */; };
+		7C9028C6D5D7A2257878629A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B32741E55A675A0A1256D /* HistoryView.swift */; };
+		8C2F9AB390DCAE80960D8326 /* FitnessTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */; };
+		9925608624837CE5FD83137D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B8DA477E2060BB7EED36 /* Exercise.swift */; };
+		A7ECBFDF51E3749C12FF57C7 /* FoodTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB597D4AE6BEF2159A79DB28 /* FoodTrackingView.swift */; };
+		AF24D2C5D4A5DBB696D350F0 /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E736951D1933A72B48964 /* ImageCompressor.swift */; };
+		B6C94EB2FBADE98DE46F2AE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */; };
+		B91EF82FD2B49A84B6DA6625 /* DayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F9875CF8DB279FB11691F /* DayDetailView.swift */; };
+		C951C86D2430E4CC3F5BB3A8 /* FitnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E622FBED1F32A0026A159 /* FitnessViewModel.swift */; };
+		D4245A24C3D50308D29A1C27 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D062527BCDC8BAB450B96 /* FoodViewModel.swift */; };
+		F349E7950FAD03FF33CCCBFA /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A7A41F2D201F15CCCE597C /* CameraView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22EC61D0D43BA4A46B292D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B59122B10F5C1D04DEEA71E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA490A776664F41CB2DBDD26;
+			remoteInfo = GenkiDo;
+		};
+		9287F4E35B740DF2E805E11B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B59122B10F5C1D04DEEA71E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA490A776664F41CB2DBDD26;
+			remoteInfo = GenkiDo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D84B8DA477E2060BB7EED36 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		179EAA4AAA2D2A029BDA7360 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		33218DDCC48ACEE1A8A98862 /* GenkiDoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A7A41F2D201F15CCCE597C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		378580200AB5F3123672CC79 /* GenkiDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GenkiDo.entitlements; sourceTree = "<group>"; };
+		4B0B32741E55A675A0A1256D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		503D062527BCDC8BAB450B96 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		660E622FBED1F32A0026A159 /* FitnessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewModel.swift; sourceTree = "<group>"; };
+		698F9875CF8DB279FB11691F /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
+		6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoUITests.swift; sourceTree = "<group>"; };
+		7080B7B7C90B03C3BE202154 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		75A7130F4B2C9F029A81338C /* GenkiDo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GenkiDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8711D1587BF4116F7E8CD812 /* GenkiDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoApp.swift; sourceTree = "<group>"; };
+		AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRecord.swift; sourceTree = "<group>"; };
+		AC3D617A02B4D06D700B0318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80AF75B480591C776F43B92 /* GenkiDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoTests.swift; sourceTree = "<group>"; };
+		CD8E736951D1933A72B48964 /* ImageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompressor.swift; sourceTree = "<group>"; };
+		DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackingView.swift; sourceTree = "<group>"; };
+		DA94CB736085E5322579D614 /* DayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRecord.swift; sourceTree = "<group>"; };
+		E6D2E0CF603D645056070DED /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		FB597D4AE6BEF2159A79DB28 /* FoodTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackingView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0481AB48BBAB295E57DACF08 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA94CB736085E5322579D614 /* DayRecord.swift */,
+				0D84B8DA477E2060BB7EED36 /* Exercise.swift */,
+				AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */,
+				179EAA4AAA2D2A029BDA7360 /* Meal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0FAF12AFBC4493C48B76CE39 /* GenkiDoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */,
+			);
+			path = GenkiDoUITests;
+			sourceTree = "<group>";
+		};
+		485C961A39952805A0C68A59 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8711D1587BF4116F7E8CD812 /* GenkiDoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4E71644E4C2686DCB2979D5B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D617A02B4D06D700B0318 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		552111E454AE4278D6069B47 /* GenkiDo */ = {
+			isa = PBXGroup;
+			children = (
+				378580200AB5F3123672CC79 /* GenkiDo.entitlements */,
+				485C961A39952805A0C68A59 /* App */,
+				0481AB48BBAB295E57DACF08 /* Models */,
+				4E71644E4C2686DCB2979D5B /* Resources */,
+				A7BC4DA4194E7959D8D5BCC1 /* Services */,
+				8944D691EF69005F091F3E09 /* ViewModels */,
+				DFD37E481841180C1472003C /* Views */,
+			);
+			path = GenkiDo;
+			sourceTree = "<group>";
+		};
+		5C08157A51C28D4DD873A3BC /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				FB597D4AE6BEF2159A79DB28 /* FoodTrackingView.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		6009A9E12D5AE85E405BE210 /* Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */,
+			);
+			path = Fitness;
+			sourceTree = "<group>";
+		};
+		60B73981187AF80522CF592D = {
+			isa = PBXGroup;
+			children = (
+				552111E454AE4278D6069B47 /* GenkiDo */,
+				B4561605DA012E92C5D0F416 /* GenkiDoTests */,
+				0FAF12AFBC4493C48B76CE39 /* GenkiDoUITests */,
+				E91DA9024BD08C3D26354324 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8944D691EF69005F091F3E09 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				660E622FBED1F32A0026A159 /* FitnessViewModel.swift */,
+				503D062527BCDC8BAB450B96 /* FoodViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A7BC4DA4194E7959D8D5BCC1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E6D2E0CF603D645056070DED /* CloudKitService.swift */,
+				CD8E736951D1933A72B48964 /* ImageCompressor.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B03A07323CB5E158A2D76AE0 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				698F9875CF8DB279FB11691F /* DayDetailView.swift */,
+				4B0B32741E55A675A0A1256D /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		B4561605DA012E92C5D0F416 /* GenkiDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				C80AF75B480591C776F43B92 /* GenkiDoTests.swift */,
+			);
+			path = GenkiDoTests;
+			sourceTree = "<group>";
+		};
+		D6685AB594909C394C858E1D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				36A7A41F2D201F15CCCE597C /* CameraView.swift */,
+				7080B7B7C90B03C3BE202154 /* ProgressRing.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DFD37E481841180C1472003C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */,
+				D6685AB594909C394C858E1D /* Components */,
+				6009A9E12D5AE85E405BE210 /* Fitness */,
+				5C08157A51C28D4DD873A3BC /* Food */,
+				B03A07323CB5E158A2D76AE0 /* History */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E91DA9024BD08C3D26354324 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75A7130F4B2C9F029A81338C /* GenkiDo.app */,
+				33218DDCC48ACEE1A8A98862 /* GenkiDoTests.xctest */,
+				B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63242527A91C22FC3091D221 /* GenkiDoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 931361B1BF450E3ACB08FA28 /* Build configuration list for PBXNativeTarget "GenkiDoUITests" */;
+			buildPhases = (
+				FCA6B38815C8079A9CD83AF3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9826856D04C15CEFC32810E0 /* PBXTargetDependency */,
+			);
+			name = GenkiDoUITests;
+			packageProductDependencies = (
+			);
+			productName = GenkiDoUITests;
+			productReference = B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DCA8B1DFA60FD247DB9268A7 /* GenkiDoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A6B0BCD5EE218CDA2ACAD5D /* Build configuration list for PBXNativeTarget "GenkiDoTests" */;
+			buildPhases = (
+				3EDCBD597B5E8596C588AD3B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B0216B2368F1AB203369628 /* PBXTargetDependency */,
+			);
+			name = GenkiDoTests;
+			packageProductDependencies = (
+			);
+			productName = GenkiDoTests;
+			productReference = 33218DDCC48ACEE1A8A98862 /* GenkiDoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EA490A776664F41CB2DBDD26 /* GenkiDo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E27158D1352EA6801386D909 /* Build configuration list for PBXNativeTarget "GenkiDo" */;
+			buildPhases = (
+				54E7E4A66F5FDD7A6E64595E /* Sources */,
+				80AF5512E6C3B1E582F1F19D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GenkiDo;
+			packageProductDependencies = (
+			);
+			productName = GenkiDo;
+			productReference = 75A7130F4B2C9F029A81338C /* GenkiDo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B59122B10F5C1D04DEEA71E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					63242527A91C22FC3091D221 = {
+						TestTargetID = EA490A776664F41CB2DBDD26;
+					};
+					EA490A776664F41CB2DBDD26 = {
+						DevelopmentTeam = X9FHM3F6WK;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 62AF5E240D7A6700F107BD76 /* Build configuration list for PBXProject "GenkiDo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = de;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				de,
+			);
+			mainGroup = 60B73981187AF80522CF592D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA490A776664F41CB2DBDD26 /* GenkiDo */,
+				DCA8B1DFA60FD247DB9268A7 /* GenkiDoTests */,
+				63242527A91C22FC3091D221 /* GenkiDoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80AF5512E6C3B1E582F1F19D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DAA230E08A2169CB0E7450D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EDCBD597B5E8596C588AD3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				322EEFB1711E638FEF9EE1D6 /* GenkiDoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E7E4A66F5FDD7A6E64595E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F349E7950FAD03FF33CCCBFA /* CameraView.swift in Sources */,
+				1ED1D241139DAACDB3721F86 /* CloudKitService.swift in Sources */,
+				B6C94EB2FBADE98DE46F2AE5 /* ContentView.swift in Sources */,
+				B91EF82FD2B49A84B6DA6625 /* DayDetailView.swift in Sources */,
+				048F5A7F5A5508964332E8B2 /* DayRecord.swift in Sources */,
+				9925608624837CE5FD83137D /* Exercise.swift in Sources */,
+				6A16B7E912D288A870232F77 /* ExerciseRecord.swift in Sources */,
+				8C2F9AB390DCAE80960D8326 /* FitnessTrackingView.swift in Sources */,
+				C951C86D2430E4CC3F5BB3A8 /* FitnessViewModel.swift in Sources */,
+				A7ECBFDF51E3749C12FF57C7 /* FoodTrackingView.swift in Sources */,
+				D4245A24C3D50308D29A1C27 /* FoodViewModel.swift in Sources */,
+				113E1489B914B43FAA3D1947 /* GenkiDoApp.swift in Sources */,
+				7C9028C6D5D7A2257878629A /* HistoryView.swift in Sources */,
+				AF24D2C5D4A5DBB696D350F0 /* ImageCompressor.swift in Sources */,
+				1E04FC99F77EF45C6EF6F31F /* Meal.swift in Sources */,
+				525171BA2A03F026B4779640 /* ProgressRing.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA6B38815C8079A9CD83AF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EC0D8917E34F45F6BC764CF /* GenkiDoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B0216B2368F1AB203369628 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA490A776664F41CB2DBDD26 /* GenkiDo */;
+			targetProxy = 9287F4E35B740DF2E805E11B /* PBXContainerItemProxy */;
+		};
+		9826856D04C15CEFC32810E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA490A776664F41CB2DBDD26 /* GenkiDo */;
+			targetProxy = 22EC61D0D43BA4A46B292D9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0166D98AC914DD9B42408392 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDoTests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenkiDo.app/GenkiDo";
+			};
+			name = Release;
+		};
+		3C2C3E65B6D41DC8E73A942A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		8CFB7BDB9EE1DD1EA127301E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDoTests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenkiDo.app/GenkiDo";
+			};
+			name = Debug;
+		};
+		B483099DA3C3A7F48BD88499 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDoUITests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GenkiDo;
+			};
+			name = Debug;
+		};
+		B7262687FF66198BFEFD81ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		CD66425AAE1B9ED4092AD514 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GenkiDo/GenkiDo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9FHM3F6WK;
+				INFOPLIST_KEY_CFBundleDisplayName = GenkiDo;
+				INFOPLIST_KEY_NSCameraUsageDescription = "GenkiDo benötigt Kamerazugriff um Mahlzeiten zu fotografieren";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDo";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D3FBF525F945FC7F117C11A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDoUITests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GenkiDo;
+			};
+			name = Release;
+		};
+		DE8A6BF3B97FB4F41C2579FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GenkiDo/GenkiDo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9FHM3F6WK;
+				INFOPLIST_KEY_CFBundleDisplayName = GenkiDo;
+				INFOPLIST_KEY_NSCameraUsageDescription = "GenkiDo benötigt Kamerazugriff um Mahlzeiten zu fotografieren";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDo";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A6B0BCD5EE218CDA2ACAD5D /* Build configuration list for PBXNativeTarget "GenkiDoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CFB7BDB9EE1DD1EA127301E /* Debug */,
+				0166D98AC914DD9B42408392 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		62AF5E240D7A6700F107BD76 /* Build configuration list for PBXProject "GenkiDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7262687FF66198BFEFD81ED /* Debug */,
+				3C2C3E65B6D41DC8E73A942A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		931361B1BF450E3ACB08FA28 /* Build configuration list for PBXNativeTarget "GenkiDoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B483099DA3C3A7F48BD88499 /* Debug */,
+				D3FBF525F945FC7F117C11A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E27158D1352EA6801386D909 /* Build configuration list for PBXNativeTarget "GenkiDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8A6BF3B97FB4F41C2579FB /* Debug */,
+				CD66425AAE1B9ED4092AD514 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B59122B10F5C1D04DEEA71E /* Project object */;
+}
