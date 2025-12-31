@@ -113,7 +113,7 @@ struct DayRowView: View {
                     .font(.headline)
 
                 HStack(spacing: 16) {
-                    Label("\(completedExerciseCount)/4", systemImage: "figure.run")
+                    Label("\(completedExerciseCount)/\(Exercise.allCases.count)", systemImage: "figure.run")
                         .font(.caption)
                         .foregroundStyle(.secondary)
 
