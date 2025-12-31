@@ -216,7 +216,7 @@ struct TotalStatsView: View {
                         .foregroundStyle(.secondary)
                     Spacer()
                     if exercise.isTimed {
-                        Text("\(totalCount(for: exercise) / Exercise.dailyGoal)x")
+                        Text("\(totalCount(for: exercise) / Exercise.dailyGoal) Min")
                             .fontWeight(.semibold)
                             .monospacedDigit()
                     } else {
