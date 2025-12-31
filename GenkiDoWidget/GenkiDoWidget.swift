@@ -11,11 +11,11 @@ struct GenkiDoWidgetEntry: TimelineEntry {
 
 struct GenkiDoWidgetProvider: TimelineProvider {
     func placeholder(in context: Context) -> GenkiDoWidgetEntry {
-        GenkiDoWidgetEntry(date: .now, completedExercises: 2, totalExercises: 4, hasMealAfterCutoff: false)
+        GenkiDoWidgetEntry(date: .now, completedExercises: 3, totalExercises: 5, hasMealAfterCutoff: false)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (GenkiDoWidgetEntry) -> Void) {
-        let entry = GenkiDoWidgetEntry(date: .now, completedExercises: 2, totalExercises: 4, hasMealAfterCutoff: false)
+        let entry = GenkiDoWidgetEntry(date: .now, completedExercises: 3, totalExercises: 5, hasMealAfterCutoff: false)
         completion(entry)
     }
 
@@ -63,7 +63,7 @@ struct GenkiDoWidgetProvider: TimelineProvider {
         return GenkiDoWidgetEntry(
             date: .now,
             completedExercises: completedCount,
-            totalExercises: 4,
+            totalExercises: 5,
             hasMealAfterCutoff: hasMealAfterCutoff
         )
     }
@@ -167,12 +167,12 @@ struct GenkiDoWidget: Widget {
 #Preview(as: .systemSmall) {
     GenkiDoWidget()
 } timeline: {
-    GenkiDoWidgetEntry(date: .now, completedExercises: 2, totalExercises: 4, hasMealAfterCutoff: false)
-    GenkiDoWidgetEntry(date: .now, completedExercises: 4, totalExercises: 4, hasMealAfterCutoff: false)
+    GenkiDoWidgetEntry(date: .now, completedExercises: 3, totalExercises: 5, hasMealAfterCutoff: false)
+    GenkiDoWidgetEntry(date: .now, completedExercises: 5, totalExercises: 5, hasMealAfterCutoff: false)
 }
 
 #Preview(as: .systemMedium) {
     GenkiDoWidget()
 } timeline: {
-    GenkiDoWidgetEntry(date: .now, completedExercises: 3, totalExercises: 4, hasMealAfterCutoff: true)
+    GenkiDoWidgetEntry(date: .now, completedExercises: 3, totalExercises: 5, hasMealAfterCutoff: true)
 }

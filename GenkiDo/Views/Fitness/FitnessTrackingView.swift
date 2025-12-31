@@ -4,18 +4,32 @@ import SwiftData
 struct FitnessTrackingView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var exerciseRecords: [ExerciseRecord]
+    @State private var activeTimerExercise: Exercise?
+    @State private var timeRemaining: Int = 0
+    @State private var timer: Timer?
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
                     ForEach(Exercise.allCases) { exercise in
-                        ExerciseRowView(
-                            exercise: exercise,
-                            isCompleted: isCompleted(exercise),
-                            onComplete: { completeExercise(exercise) },
-                            onUndo: { undoExercise(exercise) }
-                        )
+                        if exercise.isTimed {
+                            TimedExerciseRowView(
+                                exercise: exercise,
+                                isCompleted: isCompleted(exercise),
+                                isActive: activeTimerExercise == exercise,
+                                timeRemaining: activeTimerExercise == exercise ? timeRemaining : exercise.timerDuration,
+                                onStart: { startTimer(for: exercise) },
+                                onUndo: { undoExercise(exercise) }
+                            )
+                        } else {
+                            ExerciseRowView(
+                                exercise: exercise,
+                                isCompleted: isCompleted(exercise),
+                                onComplete: { completeExercise(exercise) },
+                                onUndo: { undoExercise(exercise) }
+                            )
+                        }
                     }
 
                     Divider()
@@ -57,6 +71,28 @@ struct FitnessTrackingView: View {
         }) {
             existing.count = 0
         }
+    }
+
+    private func startTimer(for exercise: Exercise) {
+        UIApplication.shared.isIdleTimerDisabled = true
+        activeTimerExercise = exercise
+        timeRemaining = exercise.timerDuration
+
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if timeRemaining > 0 {
+                timeRemaining -= 1
+            } else {
+                stopTimer()
+                completeExercise(exercise)
+            }
+        }
+    }
+
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+        activeTimerExercise = nil
+        UIApplication.shared.isIdleTimerDisabled = false
     }
 }
 
@@ -107,6 +143,64 @@ struct ExerciseRowView: View {
     }
 }
 
+struct TimedExerciseRowView: View {
+    let exercise: Exercise
+    let isCompleted: Bool
+    let isActive: Bool
+    let timeRemaining: Int
+    let onStart: () -> Void
+    let onUndo: () -> Void
+
+    var body: some View {
+        HStack {
+            if isCompleted {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundStyle(.green)
+                    .font(.title2)
+            }
+
+            Text(exercise.displayName)
+                .font(.title3)
+                .fontWeight(.medium)
+                .foregroundStyle(isCompleted ? .secondary : .primary)
+
+            Spacer()
+
+            if isCompleted {
+                Button {
+                    onUndo()
+                } label: {
+                    Text("Rückgängig")
+                        .font(.subheadline)
+                }
+                .buttonStyle(.bordered)
+                .tint(.secondary)
+            } else if isActive {
+                Text("\(timeRemaining)s")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .monospacedDigit()
+                    .foregroundStyle(.orange)
+                    .frame(width: 100)
+            } else {
+                Button {
+                    onStart()
+                } label: {
+                    Text("Start")
+                        .fontWeight(.medium)
+                        .frame(width: 100)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.orange)
+            }
+        }
+        .padding()
+        .background(isActive ? Color.orange.opacity(0.1) : Color.clear)
+        .background(.regularMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+    }
+}
+
 struct TotalStatsView: View {
     let exerciseRecords: [ExerciseRecord]
 
@@ -121,9 +215,15 @@ struct TotalStatsView: View {
                     Text(exercise.displayName)
                         .foregroundStyle(.secondary)
                     Spacer()
-                    Text("\(totalCount(for: exercise))")
-                        .fontWeight(.semibold)
-                        .monospacedDigit()
+                    if exercise.isTimed {
+                        Text("\(totalCount(for: exercise) / Exercise.dailyGoal)x")
+                            .fontWeight(.semibold)
+                            .monospacedDigit()
+                    } else {
+                        Text("\(totalCount(for: exercise))")
+                            .fontWeight(.semibold)
+                            .monospacedDigit()
+                    }
                 }
             }
         }
