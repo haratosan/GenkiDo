@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 @main
 struct GenkiDoApp: App {
@@ -11,6 +12,7 @@ struct GenkiDoApp: App {
         let modelConfiguration = ModelConfiguration(
             schema: schema,
             isStoredInMemoryOnly: false,
+            groupContainer: .identifier("group.ch.budo-team.GenkiDo"),
             cloudKitDatabase: .automatic
         )
 
@@ -24,6 +26,9 @@ struct GenkiDoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+                    WidgetCenter.shared.reloadAllTimelines()
+                }
         }
         .modelContainer(sharedModelContainer)
     }

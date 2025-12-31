@@ -15,19 +15,58 @@ struct HistoryView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(last30Days, id: \.self) { date in
-                    NavigationLink {
-                        DayDetailView(date: date)
-                    } label: {
-                        DayRowView(
-                            date: date,
-                            dayRecord: dayRecord(for: date)
-                        )
+                Section {
+                    StreakView(currentStreak: currentStreak, longestStreak: longestStreak)
+                }
+
+                Section {
+                    ForEach(last30Days, id: \.self) { date in
+                        NavigationLink {
+                            DayDetailView(date: date)
+                        } label: {
+                            DayRowView(
+                                date: date,
+                                dayRecord: dayRecord(for: date)
+                            )
+                        }
                     }
                 }
             }
             .navigationTitle("Verlauf")
         }
+    }
+
+    private var currentStreak: Int {
+        var streak = 0
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Calendar.current.startOfDay(for: .now))!
+
+        for offset in 0..<365 {
+            guard let date = Calendar.current.date(byAdding: .day, value: -offset, to: yesterday) else { break }
+            let record = dayRecord(for: date)
+            if record.isDayComplete {
+                streak += 1
+            } else {
+                break
+            }
+        }
+        return streak
+    }
+
+    private var longestStreak: Int {
+        var longest = 0
+        var current = 0
+
+        for offset in 1...365 {
+            guard let date = Calendar.current.date(byAdding: .day, value: -offset, to: Calendar.current.startOfDay(for: .now)) else { break }
+            let record = dayRecord(for: date)
+            if record.isDayComplete {
+                current += 1
+                longest = max(longest, current)
+            } else {
+                current = 0
+            }
+        }
+        return longest
     }
 
     private func dayRecord(for date: Date) -> DayRecord {
@@ -101,6 +140,38 @@ struct DayRowView: View {
 
     private var completedExerciseCount: Int {
         dayRecord.exerciseRecords.filter { $0.isCompleted }.count
+    }
+}
+
+struct StreakView: View {
+    let currentStreak: Int
+    let longestStreak: Int
+
+    var body: some View {
+        HStack(spacing: 24) {
+            VStack(spacing: 4) {
+                Text("\(currentStreak)")
+                    .font(.system(size: 36, weight: .bold))
+                    .foregroundStyle(currentStreak > 0 ? .green : .secondary)
+                Text("Aktuelle Serie")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+
+            Divider()
+
+            VStack(spacing: 4) {
+                Text("\(longestStreak)")
+                    .font(.system(size: 36, weight: .bold))
+                    .foregroundStyle(.orange)
+                Text("Längste Serie")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .padding(.vertical, 8)
     }
 }
 

@@ -13,12 +13,18 @@
 		1E04FC99F77EF45C6EF6F31F /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EAA4AAA2D2A029BDA7360 /* Meal.swift */; };
 		1ED1D241139DAACDB3721F86 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D2E0CF603D645056070DED /* CloudKitService.swift */; };
 		322EEFB1711E638FEF9EE1D6 /* GenkiDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AF75B480591C776F43B92 /* GenkiDoTests.swift */; };
+		432AF88E77E79102A097D347 /* GenkiDoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 333C8728C4A42AFC468B1063 /* GenkiDoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		525171BA2A03F026B4779640 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7080B7B7C90B03C3BE202154 /* ProgressRing.swift */; };
+		5638B5D6422176C38C44D0E9 /* GenkiDoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E877506F41DB3ECF3452313 /* GenkiDoWidget.swift */; };
 		5DAA230E08A2169CB0E7450D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3D617A02B4D06D700B0318 /* Assets.xcassets */; };
 		6A16B7E912D288A870232F77 /* ExerciseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */; };
+		6C9D9EC9FF6C458463025118 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B8DA477E2060BB7EED36 /* Exercise.swift */; };
 		7C9028C6D5D7A2257878629A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B32741E55A675A0A1256D /* HistoryView.swift */; };
 		8C2F9AB390DCAE80960D8326 /* FitnessTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */; };
+		8CE6E42C59FDC029364855C3 /* DayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94CB736085E5322579D614 /* DayRecord.swift */; };
 		9925608624837CE5FD83137D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B8DA477E2060BB7EED36 /* Exercise.swift */; };
+		99A398B352914F9C7A050B72 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EAA4AAA2D2A029BDA7360 /* Meal.swift */; };
+		9FC8F578FD1054CF37B5979C /* ExerciseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */; };
 		A7ECBFDF51E3749C12FF57C7 /* FoodTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB597D4AE6BEF2159A79DB28 /* FoodTrackingView.swift */; };
 		AF24D2C5D4A5DBB696D350F0 /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E736951D1933A72B48964 /* ImageCompressor.swift */; };
 		B6C94EB2FBADE98DE46F2AE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */; };
@@ -36,6 +42,13 @@
 			remoteGlobalIDString = EA490A776664F41CB2DBDD26;
 			remoteInfo = GenkiDo;
 		};
+		812F2687E05F8380D0F15F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B59122B10F5C1D04DEEA71E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9238480BB2D7B8831A95EEF0;
+			remoteInfo = GenkiDoWidgetExtension;
+		};
 		9287F4E35B740DF2E805E11B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7B59122B10F5C1D04DEEA71E /* Project object */;
@@ -45,21 +58,39 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		28FC32B2B26D10C32ABAD871 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				432AF88E77E79102A097D347 /* GenkiDoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0D84B8DA477E2060BB7EED36 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		179EAA4AAA2D2A029BDA7360 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		33218DDCC48ACEE1A8A98862 /* GenkiDoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		333C8728C4A42AFC468B1063 /* GenkiDoWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = GenkiDoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A7A41F2D201F15CCCE597C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		378580200AB5F3123672CC79 /* GenkiDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GenkiDo.entitlements; sourceTree = "<group>"; };
+		408C641AA61909EC9D4CCE9D /* GenkiDoWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GenkiDoWidget.entitlements; sourceTree = "<group>"; };
 		4B0B32741E55A675A0A1256D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		503D062527BCDC8BAB450B96 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		52A9565078BE209247A00409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		660E622FBED1F32A0026A159 /* FitnessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewModel.swift; sourceTree = "<group>"; };
 		698F9875CF8DB279FB11691F /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
 		6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoUITests.swift; sourceTree = "<group>"; };
 		7080B7B7C90B03C3BE202154 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		75A7130F4B2C9F029A81338C /* GenkiDo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GenkiDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8711D1587BF4116F7E8CD812 /* GenkiDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoApp.swift; sourceTree = "<group>"; };
+		8E877506F41DB3ECF3452313 /* GenkiDoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoWidget.swift; sourceTree = "<group>"; };
 		AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRecord.swift; sourceTree = "<group>"; };
 		AC3D617A02B4D06D700B0318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +111,8 @@
 				AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */,
 				179EAA4AAA2D2A029BDA7360 /* Meal.swift */,
 			);
-			path = Models;
+			name = Models;
+			path = GenkiDo/Models;
 			sourceTree = "<group>";
 		};
 		0FAF12AFBC4493C48B76CE39 /* GenkiDoUITests */ = {
@@ -105,6 +137,16 @@
 				AC3D617A02B4D06D700B0318 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		55119838553F58ABEFDA06A0 /* GenkiDoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				408C641AA61909EC9D4CCE9D /* GenkiDoWidget.entitlements */,
+				8E877506F41DB3ECF3452313 /* GenkiDoWidget.swift */,
+				52A9565078BE209247A00409 /* Info.plist */,
+			);
+			path = GenkiDoWidget;
 			sourceTree = "<group>";
 		};
 		552111E454AE4278D6069B47 /* GenkiDo */ = {
@@ -143,6 +185,8 @@
 				552111E454AE4278D6069B47 /* GenkiDo */,
 				B4561605DA012E92C5D0F416 /* GenkiDoTests */,
 				0FAF12AFBC4493C48B76CE39 /* GenkiDoUITests */,
+				55119838553F58ABEFDA06A0 /* GenkiDoWidget */,
+				CBAA4F8CCA6B2B18AE86C3FC /* Models */,
 				E91DA9024BD08C3D26354324 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +226,14 @@
 			path = GenkiDoTests;
 			sourceTree = "<group>";
 		};
+		CBAA4F8CCA6B2B18AE86C3FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0481AB48BBAB295E57DACF08 /* Models */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		D6685AB594909C394C858E1D /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +261,7 @@
 				75A7130F4B2C9F029A81338C /* GenkiDo.app */,
 				33218DDCC48ACEE1A8A98862 /* GenkiDoTests.xctest */,
 				B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */,
+				333C8728C4A42AFC468B1063 /* GenkiDoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +287,23 @@
 			productReference = B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9238480BB2D7B8831A95EEF0 /* GenkiDoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC28E3C7E7CFF2EBC54E39E /* Build configuration list for PBXNativeTarget "GenkiDoWidgetExtension" */;
+			buildPhases = (
+				AD48A1A0808EC368F359E370 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GenkiDoWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = GenkiDoWidgetExtension;
+			productReference = 333C8728C4A42AFC468B1063 /* GenkiDoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DCA8B1DFA60FD247DB9268A7 /* GenkiDoTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A6B0BCD5EE218CDA2ACAD5D /* Build configuration list for PBXNativeTarget "GenkiDoTests" */;
@@ -258,10 +328,12 @@
 			buildPhases = (
 				54E7E4A66F5FDD7A6E64595E /* Sources */,
 				80AF5512E6C3B1E582F1F19D /* Resources */,
+				28FC32B2B26D10C32ABAD871 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F37BA33DD2A36BA5B3A49D78 /* PBXTargetDependency */,
 			);
 			name = GenkiDo;
 			packageProductDependencies = (
@@ -281,6 +353,10 @@
 				TargetAttributes = {
 					63242527A91C22FC3091D221 = {
 						TestTargetID = EA490A776664F41CB2DBDD26;
+					};
+					9238480BB2D7B8831A95EEF0 = {
+						DevelopmentTeam = X9FHM3F6WK;
+						ProvisioningStyle = Automatic;
 					};
 					EA490A776664F41CB2DBDD26 = {
 						DevelopmentTeam = X9FHM3F6WK;
@@ -305,6 +381,7 @@
 				EA490A776664F41CB2DBDD26 /* GenkiDo */,
 				DCA8B1DFA60FD247DB9268A7 /* GenkiDoTests */,
 				63242527A91C22FC3091D221 /* GenkiDoUITests */,
+				9238480BB2D7B8831A95EEF0 /* GenkiDoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +429,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD48A1A0808EC368F359E370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CE6E42C59FDC029364855C3 /* DayRecord.swift in Sources */,
+				6C9D9EC9FF6C458463025118 /* Exercise.swift in Sources */,
+				9FC8F578FD1054CF37B5979C /* ExerciseRecord.swift in Sources */,
+				5638B5D6422176C38C44D0E9 /* GenkiDoWidget.swift in Sources */,
+				99A398B352914F9C7A050B72 /* Meal.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCA6B38815C8079A9CD83AF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +461,11 @@
 			isa = PBXTargetDependency;
 			target = EA490A776664F41CB2DBDD26 /* GenkiDo */;
 			targetProxy = 22EC61D0D43BA4A46B292D9C /* PBXContainerItemProxy */;
+		};
+		F37BA33DD2A36BA5B3A49D78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9238480BB2D7B8831A95EEF0 /* GenkiDoWidgetExtension */;
+			targetProxy = 812F2687E05F8380D0F15F43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -449,6 +543,22 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		61C722A88140B13996809752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GenkiDoWidget/GenkiDoWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9FHM3F6WK;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GenkiDoWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDo.widget";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -619,6 +729,22 @@
 			};
 			name = Debug;
 		};
+		E0A7D781757A82AAA3F12064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GenkiDoWidget/GenkiDoWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X9FHM3F6WK;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = GenkiDoWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDo.widget";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -645,6 +771,15 @@
 			buildConfigurations = (
 				B483099DA3C3A7F48BD88499 /* Debug */,
 				D3FBF525F945FC7F117C11A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BFC28E3C7E7CFF2EBC54E39E /* Build configuration list for PBXNativeTarget "GenkiDoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0A7D781757A82AAA3F12064 /* Debug */,
+				61C722A88140B13996809752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

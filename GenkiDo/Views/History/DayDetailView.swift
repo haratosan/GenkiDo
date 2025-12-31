@@ -100,17 +100,9 @@ struct FitnessSectionView: View {
                     let isCompleted = count >= Exercise.dailyGoal
 
                     HStack {
-                        Image(systemName: exercise.systemImage)
-                            .frame(width: 24)
-                            .foregroundStyle(isCompleted ? .green : .primary)
-
                         Text(exercise.displayName)
 
                         Spacer()
-
-                        Text("\(count)/\(Exercise.dailyGoal)")
-                            .fontWeight(.medium)
-                            .foregroundStyle(isCompleted ? .green : .secondary)
 
                         Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")
                             .foregroundStyle(isCompleted ? .green : .secondary)

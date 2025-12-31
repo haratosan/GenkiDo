@@ -17,40 +17,47 @@ struct FoodTrackingView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    if isFastingTime {
-                        HStack {
-                            Image(systemName: "moon.fill")
-                                .foregroundStyle(.orange)
-                            Text("Fastenzeit aktiv")
-                                .font(.subheadline)
+            ZStack(alignment: .bottomTrailing) {
+                List {
+                    Section {
+                        if isFastingTime {
+                            HStack {
+                                Image(systemName: "moon.fill")
+                                    .foregroundStyle(.orange)
+                                Text("Fastenzeit aktiv")
+                                    .font(.subheadline)
+                            }
+                        }
+                    }
+
+                    Section("Heute") {
+                        if todayMeals.isEmpty {
+                            Text("Noch keine Mahlzeiten erfasst")
+                                .foregroundStyle(.secondary)
+                        } else {
+                            ForEach(todayMeals, id: \.timestamp) { meal in
+                                MealRowView(meal: meal)
+                            }
+                            .onDelete(perform: deleteMeals)
                         }
                     }
                 }
 
-                Section("Heute") {
-                    if todayMeals.isEmpty {
-                        Text("Noch keine Mahlzeiten erfasst")
-                            .foregroundStyle(.secondary)
-                    } else {
-                        ForEach(todayMeals, id: \.timestamp) { meal in
-                            MealRowView(meal: meal)
-                        }
-                        .onDelete(perform: deleteMeals)
-                    }
+                Button {
+                    showingCamera = true
+                } label: {
+                    Image(systemName: "camera.fill")
+                        .font(.title2)
+                        .foregroundStyle(.white)
+                        .frame(width: 60, height: 60)
+                        .background(.blue)
+                        .clipShape(Circle())
+                        .shadow(radius: 4)
                 }
+                .padding(.trailing, 20)
+                .padding(.bottom, 20)
             }
             .navigationTitle("Essen")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        showingCamera = true
-                    } label: {
-                        Label("Mahlzeit", systemImage: "camera.fill")
-                    }
-                }
-            }
             .fullScreenCover(isPresented: $showingCamera) {
                 CameraView { image in
                     saveMeal(with: image)

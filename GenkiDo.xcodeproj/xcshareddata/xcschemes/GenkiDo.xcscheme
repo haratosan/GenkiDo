@@ -49,6 +49,20 @@
                ReferencedContainer = "container:GenkiDo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9238480BB2D7B8831A95EEF0"
+               BuildableName = "GenkiDoWidgetExtension.appex"
+               BlueprintName = "GenkiDoWidgetExtension"
+               ReferencedContainer = "container:GenkiDo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -2,9 +2,9 @@ import Foundation
 
 enum Exercise: String, CaseIterable, Codable, Identifiable {
     case pushUps = "pushUps"
-    case shoulderRaises = "shoulderRaises"
+    case slDeadlifts = "slDeadlifts"
     case squats = "squats"
-    case crunches = "crunches"
+    case towelRows = "towelRows"
 
     var id: String { rawValue }
 
@@ -12,19 +12,10 @@ enum Exercise: String, CaseIterable, Codable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .pushUps: return "Liegestütze"
-        case .shoulderRaises: return "Schulterheber"
-        case .squats: return "Kniebeugen"
-        case .crunches: return "Rumpfbeugen"
-        }
-    }
-
-    var systemImage: String {
-        switch self {
-        case .pushUps: return "figure.strengthtraining.traditional"
-        case .shoulderRaises: return "figure.arms.open"
-        case .squats: return "figure.squats"
-        case .crunches: return "figure.core.training"
+        case .pushUps: return "Pushups"
+        case .slDeadlifts: return "SL Deadlifts"
+        case .squats: return "Squats"
+        case .towelRows: return "Towel Rows"
         }
     }
 }
