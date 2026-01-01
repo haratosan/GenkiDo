@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		048F5A7F5A5508964332E8B2 /* DayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94CB736085E5322579D614 /* DayRecord.swift */; };
+		0CD55AE220986DF07D4BF06E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91082DF7CCB559F81A424B6 /* NotificationService.swift */; };
 		0EC0D8917E34F45F6BC764CF /* GenkiDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */; };
+		0F177F420736DCBD64DFAFB7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E0E6FD858318B30E643330 /* SettingsView.swift */; };
 		113E1489B914B43FAA3D1947 /* GenkiDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711D1587BF4116F7E8CD812 /* GenkiDoApp.swift */; };
 		1E04FC99F77EF45C6EF6F31F /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EAA4AAA2D2A029BDA7360 /* Meal.swift */; };
 		1ED1D241139DAACDB3721F86 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D2E0CF603D645056070DED /* CloudKitService.swift */; };
@@ -73,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06E0E6FD858318B30E643330 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0D84B8DA477E2060BB7EED36 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		179EAA4AAA2D2A029BDA7360 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 		AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRecord.swift; sourceTree = "<group>"; };
 		AC3D617A02B4D06D700B0318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91082DF7CCB559F81A424B6 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C80AF75B480591C776F43B92 /* GenkiDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoTests.swift; sourceTree = "<group>"; };
 		CD8E736951D1933A72B48964 /* ImageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompressor.swift; sourceTree = "<group>"; };
 		DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackingView.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			children = (
 				E6D2E0CF603D645056070DED /* CloudKitService.swift */,
 				CD8E736951D1933A72B48964 /* ImageCompressor.swift */,
+				B91082DF7CCB559F81A424B6 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,6 +221,14 @@
 				4B0B32741E55A675A0A1256D /* HistoryView.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		B2C623F8C4FB95C4A076AE85 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				06E0E6FD858318B30E643330 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		B4561605DA012E92C5D0F416 /* GenkiDoTests */ = {
@@ -251,6 +264,7 @@
 				6009A9E12D5AE85E405BE210 /* Fitness */,
 				5C08157A51C28D4DD873A3BC /* Food */,
 				B03A07323CB5E158A2D76AE0 /* History */,
+				B2C623F8C4FB95C4A076AE85 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,7 +439,9 @@
 				7C9028C6D5D7A2257878629A /* HistoryView.swift in Sources */,
 				AF24D2C5D4A5DBB696D350F0 /* ImageCompressor.swift in Sources */,
 				1E04FC99F77EF45C6EF6F31F /* Meal.swift in Sources */,
+				0CD55AE220986DF07D4BF06E /* NotificationService.swift in Sources */,
 				525171BA2A03F026B4779640 /* ProgressRing.swift in Sources */,
+				0F177F420736DCBD64DFAFB7 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

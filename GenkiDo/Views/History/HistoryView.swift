@@ -112,7 +112,7 @@ struct DayRowView: View {
                 Text(date, format: .dateTime.weekday(.wide).day().month())
                     .font(.headline)
 
-                HStack(spacing: 16) {
+                HStack(spacing: 12) {
                     Label("\(completedExerciseCount)/\(Exercise.allCases.count)", systemImage: "figure.run")
                         .font(.caption)
                         .foregroundStyle(.secondary)
@@ -122,7 +122,7 @@ struct DayRowView: View {
                         .foregroundStyle(.secondary)
 
                     if dayRecord.hasMealAfterFastingCutoff {
-                        Label("Nach 18:00", systemImage: "moon.fill")
+                        Image(systemName: "moon.fill")
                             .font(.caption)
                             .foregroundStyle(.orange)
                     }

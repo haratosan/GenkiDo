@@ -17,6 +17,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Verlauf", systemImage: "calendar")
                 }
+
+            SettingsView()
+                .tabItem {
+                    Label("Einstellungen", systemImage: "gearshape")
+                }
         }
     }
 }

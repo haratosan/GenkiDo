@@ -61,6 +61,15 @@ struct FitnessTrackingView: View {
             let newRecord = ExerciseRecord(exercise: exercise, count: Exercise.dailyGoal, date: .now)
             modelContext.insert(newRecord)
         }
+
+        // Check if all exercises are now completed and cancel today's reminder
+        checkAndCancelReminder()
+    }
+
+    private func checkAndCancelReminder() {
+        let completedCount = Exercise.allCases.filter { isCompleted($0) }.count + 1 // +1 for the one just completed
+        let allCompleted = completedCount >= Exercise.allCases.count
+        NotificationService.shared.cancelTodayReminderIfNeeded(allExercisesCompleted: allCompleted)
     }
 
     private func undoExercise(_ exercise: Exercise) {
@@ -70,6 +79,11 @@ struct FitnessTrackingView: View {
             $0.exerciseType == exercise.rawValue && $0.date == today
         }) {
             existing.count = 0
+        }
+
+        // Reschedule today's reminder if before notification time
+        Task {
+            await NotificationService.shared.rescheduleIfNeeded()
         }
     }
 
