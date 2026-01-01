@@ -8,6 +8,7 @@ struct GenkiDoApp: App {
         let schema = Schema([
             ExerciseRecord.self,
             Meal.self,
+            CustomExercise.self,
         ])
         let modelConfiguration = ModelConfiguration(
             schema: schema,

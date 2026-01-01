@@ -12,7 +12,15 @@ struct FoodTrackingView: View {
     }
 
     private var isFastingTime: Bool {
-        Calendar.current.component(.hour, from: .now) >= 18
+        FastingSettings.isFastingTimeNow
+    }
+
+    private var eatingWindowStart: Int {
+        FastingSettings.startHour(for: .now)
+    }
+
+    private var eatingWindowEnd: Int {
+        FastingSettings.endHour(for: .now)
     }
 
     var body: some View {
@@ -24,15 +32,15 @@ struct FoodTrackingView: View {
                             HStack {
                                 Image(systemName: "moon.fill")
                                     .foregroundStyle(.orange)
-                                Text("Fastenzeit aktiv")
+                                Text("Fasting time active")
                                     .font(.subheadline)
                             }
                         }
                     }
 
-                    Section("Heute") {
+                    Section("Today") {
                         if todayMeals.isEmpty {
-                            Text("Noch keine Mahlzeiten erfasst")
+                            Text("No meals logged yet")
                                 .foregroundStyle(.secondary)
                         } else {
                             ForEach(todayMeals, id: \.timestamp) { meal in
@@ -57,7 +65,7 @@ struct FoodTrackingView: View {
                 .padding(.trailing, 20)
                 .padding(.bottom, 20)
             }
-            .navigationTitle("Essen")
+            .navigationTitle("Food")
             .fullScreenCover(isPresented: $showingCamera) {
                 CameraView { image in
                     saveMeal(with: image)
@@ -105,10 +113,16 @@ struct MealRowView: View {
                 Text(meal.timestamp, style: .time)
                     .font(.headline)
 
-                if meal.isAfterFastingCutoff {
-                    Label("Nach 18:00", systemImage: "exclamationmark.triangle.fill")
-                        .font(.caption)
-                        .foregroundStyle(.orange)
+                if meal.isOutsideEatingWindow {
+                    if meal.isBeforeStartTime {
+                        Label("Before \(meal.eatingWindowStart):00", systemImage: "exclamationmark.triangle.fill")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    } else {
+                        Label("After \(meal.eatingWindowEnd):00", systemImage: "exclamationmark.triangle.fill")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    }
                 }
             }
 

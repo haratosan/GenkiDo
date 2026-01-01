@@ -7,6 +7,8 @@ struct DayDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var exerciseRecords: [ExerciseRecord]
     @Query private var meals: [Meal]
+    @Query(filter: #Predicate<CustomExercise> { $0.isActive }, sort: \CustomExercise.sortOrder)
+    private var activeExercises: [CustomExercise]
 
     init(date: Date) {
         self.date = date
@@ -29,19 +31,14 @@ struct DayDetailView: View {
     }
 
     private var dayRecord: DayRecord {
-        DayRecord(date: date, exerciseRecords: exerciseRecords, meals: meals)
+        DayRecord(date: date, exerciseRecords: exerciseRecords, meals: meals, activeExercises: activeExercises)
     }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 24) {
-                // Status Header
                 StatusHeaderView(dayRecord: dayRecord)
-
-                // Fitness Section
-                FitnessSectionView(exerciseRecords: exerciseRecords)
-
-                // Meals Section
+                FitnessSectionView(exerciseRecords: exerciseRecords, exercises: activeExercises)
                 MealsSectionView(meals: meals)
             }
             .padding()
@@ -61,17 +58,17 @@ struct StatusHeaderView: View {
                 .foregroundStyle(dayRecord.isDayComplete ? .green : .red)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(dayRecord.isDayComplete ? "Tag erfolgreich!" : "Tag nicht abgeschlossen")
+                Text(dayRecord.isDayComplete ? "Day completed!" : "Day incomplete")
                     .font(.title2)
                     .fontWeight(.semibold)
 
                 if !dayRecord.allExercisesCompleted {
-                    Text("Übungen nicht vollständig")
+                    Text("Exercises: \(dayRecord.completedExerciseCount)/\(dayRecord.totalExerciseCount)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
-                if dayRecord.hasMealAfterFastingCutoff {
-                    Text("Mahlzeit nach 18:00")
+                if dayRecord.hasMealOutsideEatingWindow {
+                    Text("Meal outside \(dayRecord.eatingWindowStart):00-\(dayRecord.eatingWindowEnd):00")
                         .font(.subheadline)
                         .foregroundStyle(.orange)
                 }
@@ -87,6 +84,7 @@ struct StatusHeaderView: View {
 
 struct FitnessSectionView: View {
     let exerciseRecords: [ExerciseRecord]
+    let exercises: [CustomExercise]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -94,13 +92,11 @@ struct FitnessSectionView: View {
                 .font(.headline)
 
             VStack(spacing: 8) {
-                ForEach(Exercise.allCases) { exercise in
-                    let record = exerciseRecords.first { $0.exerciseType == exercise.rawValue }
-                    let count = record?.count ?? 0
-                    let isCompleted = count >= Exercise.dailyGoal
+                ForEach(exercises) { exercise in
+                    let isCompleted = isExerciseCompleted(exercise)
 
                     HStack {
-                        Text(exercise.displayName)
+                        Text(exercise.name)
 
                         Spacer()
 
@@ -115,6 +111,20 @@ struct FitnessSectionView: View {
             }
         }
     }
+
+    private func isExerciseCompleted(_ exercise: CustomExercise) -> Bool {
+        let exerciseId = exercise.id.uuidString
+        guard let record = exerciseRecords.first(where: { $0.exerciseType == exerciseId }) else {
+            return false
+        }
+
+        switch exercise.exerciseType {
+        case .done:
+            return record.count > 0
+        case .reps, .timed:
+            return record.isCompleted(goal: exercise.goal)
+        }
+    }
 }
 
 struct MealsSectionView: View {
@@ -127,11 +137,11 @@ struct MealsSectionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Mahlzeiten (\(meals.count))")
+            Text("Meals (\(meals.count))")
                 .font(.headline)
 
             if meals.isEmpty {
-                Text("Keine Mahlzeiten erfasst")
+                Text("No meals logged")
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding()
@@ -175,10 +185,17 @@ struct MealCardView: View {
 
                 Spacer()
 
-                if meal.isAfterFastingCutoff {
-                    Image(systemName: "moon.fill")
-                        .font(.caption)
-                        .foregroundStyle(.orange)
+                if meal.isOutsideEatingWindow {
+                    HStack(spacing: 2) {
+                        Image(systemName: "moon.fill")
+                        if meal.isBeforeStartTime {
+                            Text("<\(meal.eatingWindowStart):00")
+                        } else {
+                            Text(">\(meal.eatingWindowEnd):00")
+                        }
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.orange)
                 }
             }
             .padding(8)
@@ -192,5 +209,5 @@ struct MealCardView: View {
     NavigationStack {
         DayDetailView(date: .now)
     }
-    .modelContainer(for: [ExerciseRecord.self, Meal.self], inMemory: true)
+    .modelContainer(for: [ExerciseRecord.self, Meal.self, CustomExercise.self], inMemory: true)
 }

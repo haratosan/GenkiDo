@@ -5,10 +5,26 @@ struct HistoryView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \ExerciseRecord.date, order: .reverse) private var exerciseRecords: [ExerciseRecord]
     @Query(sort: \Meal.timestamp, order: .reverse) private var meals: [Meal]
+    @Query(filter: #Predicate<CustomExercise> { $0.isActive }, sort: \CustomExercise.sortOrder)
+    private var activeExercises: [CustomExercise]
 
-    private var last30Days: [Date] {
-        (0..<30).compactMap { offset in
-            Calendar.current.date(byAdding: .day, value: -offset, to: Calendar.current.startOfDay(for: .now))
+    /// Earliest date with any data (exercise or meal)
+    private var earliestDate: Date {
+        let earliestExercise = exerciseRecords.last?.date
+        let earliestMeal = meals.last?.timestamp
+
+        let candidates = [earliestExercise, earliestMeal].compactMap { $0 }
+        let earliest = candidates.min() ?? .now
+        return Calendar.current.startOfDay(for: earliest)
+    }
+
+    /// All days from today back to the first entry
+    private var allDays: [Date] {
+        let today = Calendar.current.startOfDay(for: .now)
+        let dayCount = Calendar.current.dateComponents([.day], from: earliestDate, to: today).day ?? 0
+
+        return (0...dayCount).compactMap { offset in
+            Calendar.current.date(byAdding: .day, value: -offset, to: today)
         }
     }
 
@@ -20,27 +36,34 @@ struct HistoryView: View {
                 }
 
                 Section {
-                    ForEach(last30Days, id: \.self) { date in
+                    ForEach(allDays, id: \.self) { date in
                         NavigationLink {
                             DayDetailView(date: date)
                         } label: {
                             DayRowView(
                                 date: date,
-                                dayRecord: dayRecord(for: date)
+                                dayRecord: dayRecord(for: date),
+                                activeExercises: activeExercises
                             )
                         }
                     }
                 }
             }
-            .navigationTitle("Verlauf")
+            .navigationTitle("History")
         }
+    }
+
+    /// Total days with any data (for streak calculation bounds)
+    private var totalDaysWithData: Int {
+        let today = Calendar.current.startOfDay(for: .now)
+        return Calendar.current.dateComponents([.day], from: earliestDate, to: today).day ?? 0
     }
 
     private var currentStreak: Int {
         var streak = 0
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Calendar.current.startOfDay(for: .now))!
 
-        for offset in 0..<365 {
+        for offset in 0...totalDaysWithData {
             guard let date = Calendar.current.date(byAdding: .day, value: -offset, to: yesterday) else { break }
             let record = dayRecord(for: date)
             if record.isDayComplete {
@@ -56,7 +79,7 @@ struct HistoryView: View {
         var longest = 0
         var current = 0
 
-        for offset in 1...365 {
+        for offset in 1...max(1, totalDaysWithData) {
             guard let date = Calendar.current.date(byAdding: .day, value: -offset, to: Calendar.current.startOfDay(for: .now)) else { break }
             let record = dayRecord(for: date)
             if record.isDayComplete {
@@ -76,13 +99,14 @@ struct HistoryView: View {
         let dayExercises = exerciseRecords.filter { $0.date == dayStart }
         let dayMeals = meals.filter { $0.timestamp >= dayStart && $0.timestamp < dayEnd }
 
-        return DayRecord(date: date, exerciseRecords: dayExercises, meals: dayMeals)
+        return DayRecord(date: date, exerciseRecords: dayExercises, meals: dayMeals, activeExercises: activeExercises)
     }
 }
 
 struct DayRowView: View {
     let date: Date
     let dayRecord: DayRecord
+    let activeExercises: [CustomExercise]
 
     private var isToday: Bool {
         Calendar.current.isDateInToday(date)
@@ -113,7 +137,7 @@ struct DayRowView: View {
                     .font(.headline)
 
                 HStack(spacing: 12) {
-                    Label("\(completedExerciseCount)/\(Exercise.allCases.count)", systemImage: "figure.run")
+                    Label("\(dayRecord.completedExerciseCount)/\(dayRecord.totalExerciseCount)", systemImage: "figure.run")
                         .font(.caption)
                         .foregroundStyle(.secondary)
 
@@ -121,7 +145,7 @@ struct DayRowView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
 
-                    if dayRecord.hasMealAfterFastingCutoff {
+                    if dayRecord.hasMealOutsideEatingWindow {
                         Image(systemName: "moon.fill")
                             .font(.caption)
                             .foregroundStyle(.orange)
@@ -137,10 +161,6 @@ struct DayRowView: View {
         }
         .padding(.vertical, 4)
     }
-
-    private var completedExerciseCount: Int {
-        dayRecord.exerciseRecords.filter { $0.isCompleted }.count
-    }
 }
 
 struct StreakView: View {
@@ -153,7 +173,7 @@ struct StreakView: View {
                 Text("\(currentStreak)")
                     .font(.system(size: 36, weight: .bold))
                     .foregroundStyle(currentStreak > 0 ? .green : .secondary)
-                Text("Aktuelle Serie")
+                Text("Current Streak")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -165,7 +185,7 @@ struct StreakView: View {
                 Text("\(longestStreak)")
                     .font(.system(size: 36, weight: .bold))
                     .foregroundStyle(.orange)
-                Text("Längste Serie")
+                Text("Longest Streak")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -205,5 +225,5 @@ struct MealThumbnailStack: View {
 
 #Preview {
     HistoryView()
-        .modelContainer(for: [ExerciseRecord.self, Meal.self], inMemory: true)
+        .modelContainer(for: [ExerciseRecord.self, Meal.self, CustomExercise.self], inMemory: true)
 }

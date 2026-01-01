@@ -29,7 +29,7 @@ final class NotificationService: Sendable {
 
         let content = UNMutableNotificationContent()
         content.title = "GenkiDo"
-        content.body = "Zeit für deine täglichen Übungen!"
+        content.body = "Time for your daily exercises!"
         content.sound = .default
 
         var dateComponents = DateComponents()
@@ -81,7 +81,7 @@ final class NotificationService: Sendable {
 
         let content = UNMutableNotificationContent()
         content.title = "GenkiDo"
-        content.body = "Zeit für deine täglichen Übungen!"
+        content.body = "Time for your daily exercises!"
         content.sound = .default
 
         // Schedule for tomorrow at the set time

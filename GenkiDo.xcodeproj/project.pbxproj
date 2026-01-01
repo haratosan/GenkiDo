@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01EE035627C808D3E08B3475 /* ExerciseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC84BD729C3738DE0F5A788 /* ExerciseService.swift */; };
 		048F5A7F5A5508964332E8B2 /* DayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94CB736085E5322579D614 /* DayRecord.swift */; };
 		0CD55AE220986DF07D4BF06E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91082DF7CCB559F81A424B6 /* NotificationService.swift */; };
 		0EC0D8917E34F45F6BC764CF /* GenkiDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */; };
@@ -14,17 +15,19 @@
 		113E1489B914B43FAA3D1947 /* GenkiDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711D1587BF4116F7E8CD812 /* GenkiDoApp.swift */; };
 		1E04FC99F77EF45C6EF6F31F /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EAA4AAA2D2A029BDA7360 /* Meal.swift */; };
 		1ED1D241139DAACDB3721F86 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D2E0CF603D645056070DED /* CloudKitService.swift */; };
+		24694E4EACCE362E406B1122 /* FastingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7565250530CC5FB9DCBD711 /* FastingSettings.swift */; };
 		322EEFB1711E638FEF9EE1D6 /* GenkiDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AF75B480591C776F43B92 /* GenkiDoTests.swift */; };
+		3AF6ADB9D0C88620C73BECC3 /* CustomExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40A26B7D92745FC09A7C6B /* CustomExercise.swift */; };
 		432AF88E77E79102A097D347 /* GenkiDoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 333C8728C4A42AFC468B1063 /* GenkiDoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		45312047719B9A063E34C611 /* FastingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7565250530CC5FB9DCBD711 /* FastingSettings.swift */; };
 		525171BA2A03F026B4779640 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7080B7B7C90B03C3BE202154 /* ProgressRing.swift */; };
 		5638B5D6422176C38C44D0E9 /* GenkiDoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E877506F41DB3ECF3452313 /* GenkiDoWidget.swift */; };
 		5DAA230E08A2169CB0E7450D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3D617A02B4D06D700B0318 /* Assets.xcassets */; };
 		6A16B7E912D288A870232F77 /* ExerciseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */; };
-		6C9D9EC9FF6C458463025118 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B8DA477E2060BB7EED36 /* Exercise.swift */; };
 		7C9028C6D5D7A2257878629A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B32741E55A675A0A1256D /* HistoryView.swift */; };
 		8C2F9AB390DCAE80960D8326 /* FitnessTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */; };
 		8CE6E42C59FDC029364855C3 /* DayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94CB736085E5322579D614 /* DayRecord.swift */; };
-		9925608624837CE5FD83137D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D84B8DA477E2060BB7EED36 /* Exercise.swift */; };
+		984638029FCE2EE7649D656E /* EatingWindowSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDF4DFB82DF9791BCFBCD6 /* EatingWindowSettingsView.swift */; };
 		99A398B352914F9C7A050B72 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EAA4AAA2D2A029BDA7360 /* Meal.swift */; };
 		9FC8F578FD1054CF37B5979C /* ExerciseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */; };
 		A7ECBFDF51E3749C12FF57C7 /* FoodTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB597D4AE6BEF2159A79DB28 /* FoodTrackingView.swift */; };
@@ -32,8 +35,12 @@
 		B6C94EB2FBADE98DE46F2AE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */; };
 		B91EF82FD2B49A84B6DA6625 /* DayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F9875CF8DB279FB11691F /* DayDetailView.swift */; };
 		C951C86D2430E4CC3F5BB3A8 /* FitnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E622FBED1F32A0026A159 /* FitnessViewModel.swift */; };
+		D422CACABF65100C249EDE13 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AAFACE121E927CD00C56B /* ExerciseType.swift */; };
 		D4245A24C3D50308D29A1C27 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D062527BCDC8BAB450B96 /* FoodViewModel.swift */; };
+		DD354096EA866BDB87E28720 /* ExerciseSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09CAFC2DA906C6B970994A8 /* ExerciseSettingsView.swift */; };
+		DD8D20E544C3C922B18044B6 /* CustomExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40A26B7D92745FC09A7C6B /* CustomExercise.swift */; };
 		F349E7950FAD03FF33CCCBFA /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A7A41F2D201F15CCCE597C /* CameraView.swift */; };
+		FC0F5E2E66211C74EC2A4295 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644AAFACE121E927CD00C56B /* ExerciseType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +82,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05BDF4DFB82DF9791BCFBCD6 /* EatingWindowSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatingWindowSettingsView.swift; sourceTree = "<group>"; };
 		06E0E6FD858318B30E643330 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		0D84B8DA477E2060BB7EED36 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		179EAA4AAA2D2A029BDA7360 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		33218DDCC48ACEE1A8A98862 /* GenkiDoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +94,7 @@
 		4B0B32741E55A675A0A1256D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		503D062527BCDC8BAB450B96 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
 		52A9565078BE209247A00409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		644AAFACE121E927CD00C56B /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		660E622FBED1F32A0026A159 /* FitnessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewModel.swift; sourceTree = "<group>"; };
 		698F9875CF8DB279FB11691F /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
 		6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoUITests.swift; sourceTree = "<group>"; };
@@ -96,12 +104,16 @@
 		8E877506F41DB3ECF3452313 /* GenkiDoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoWidget.swift; sourceTree = "<group>"; };
 		AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRecord.swift; sourceTree = "<group>"; };
 		AC3D617A02B4D06D700B0318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7565250530CC5FB9DCBD711 /* FastingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FastingSettings.swift; path = GenkiDo/Services/FastingSettings.swift; sourceTree = "<group>"; };
 		B8229DC29A69A72673044C51 /* GenkiDoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B91082DF7CCB559F81A424B6 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		BEC84BD729C3738DE0F5A788 /* ExerciseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseService.swift; sourceTree = "<group>"; };
+		C09CAFC2DA906C6B970994A8 /* ExerciseSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSettingsView.swift; sourceTree = "<group>"; };
 		C80AF75B480591C776F43B92 /* GenkiDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenkiDoTests.swift; sourceTree = "<group>"; };
 		CD8E736951D1933A72B48964 /* ImageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCompressor.swift; sourceTree = "<group>"; };
 		DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackingView.swift; sourceTree = "<group>"; };
 		DA94CB736085E5322579D614 /* DayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayRecord.swift; sourceTree = "<group>"; };
+		DC40A26B7D92745FC09A7C6B /* CustomExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExercise.swift; sourceTree = "<group>"; };
 		E6D2E0CF603D645056070DED /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
 		FB597D4AE6BEF2159A79DB28 /* FoodTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,9 +122,10 @@
 		0481AB48BBAB295E57DACF08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DC40A26B7D92745FC09A7C6B /* CustomExercise.swift */,
 				DA94CB736085E5322579D614 /* DayRecord.swift */,
-				0D84B8DA477E2060BB7EED36 /* Exercise.swift */,
 				AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */,
+				644AAFACE121E927CD00C56B /* ExerciseType.swift */,
 				179EAA4AAA2D2A029BDA7360 /* Meal.swift */,
 			);
 			name = Models;
@@ -125,6 +138,14 @@
 				6CE01A50410C3FF71DD950B0 /* GenkiDoUITests.swift */,
 			);
 			path = GenkiDoUITests;
+			sourceTree = "<group>";
+		};
+		15A6E60B0BE7657202A8E573 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B7565250530CC5FB9DCBD711 /* FastingSettings.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		485C961A39952805A0C68A59 /* App */ = {
@@ -191,6 +212,7 @@
 				0FAF12AFBC4493C48B76CE39 /* GenkiDoUITests */,
 				55119838553F58ABEFDA06A0 /* GenkiDoWidget */,
 				CBAA4F8CCA6B2B18AE86C3FC /* Models */,
+				15A6E60B0BE7657202A8E573 /* Services */,
 				E91DA9024BD08C3D26354324 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -208,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				E6D2E0CF603D645056070DED /* CloudKitService.swift */,
+				BEC84BD729C3738DE0F5A788 /* ExerciseService.swift */,
+				B7565250530CC5FB9DCBD711 /* FastingSettings.swift */,
 				CD8E736951D1933A72B48964 /* ImageCompressor.swift */,
 				B91082DF7CCB559F81A424B6 /* NotificationService.swift */,
 			);
@@ -226,6 +250,8 @@
 		B2C623F8C4FB95C4A076AE85 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				05BDF4DFB82DF9791BCFBCD6 /* EatingWindowSettingsView.swift */,
+				C09CAFC2DA906C6B970994A8 /* ExerciseSettingsView.swift */,
 				06E0E6FD858318B30E643330 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -427,10 +453,15 @@
 				F349E7950FAD03FF33CCCBFA /* CameraView.swift in Sources */,
 				1ED1D241139DAACDB3721F86 /* CloudKitService.swift in Sources */,
 				B6C94EB2FBADE98DE46F2AE5 /* ContentView.swift in Sources */,
+				DD8D20E544C3C922B18044B6 /* CustomExercise.swift in Sources */,
 				B91EF82FD2B49A84B6DA6625 /* DayDetailView.swift in Sources */,
 				048F5A7F5A5508964332E8B2 /* DayRecord.swift in Sources */,
-				9925608624837CE5FD83137D /* Exercise.swift in Sources */,
+				984638029FCE2EE7649D656E /* EatingWindowSettingsView.swift in Sources */,
 				6A16B7E912D288A870232F77 /* ExerciseRecord.swift in Sources */,
+				01EE035627C808D3E08B3475 /* ExerciseService.swift in Sources */,
+				DD354096EA866BDB87E28720 /* ExerciseSettingsView.swift in Sources */,
+				FC0F5E2E66211C74EC2A4295 /* ExerciseType.swift in Sources */,
+				45312047719B9A063E34C611 /* FastingSettings.swift in Sources */,
 				8C2F9AB390DCAE80960D8326 /* FitnessTrackingView.swift in Sources */,
 				C951C86D2430E4CC3F5BB3A8 /* FitnessViewModel.swift in Sources */,
 				A7ECBFDF51E3749C12FF57C7 /* FoodTrackingView.swift in Sources */,
@@ -449,9 +480,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF6ADB9D0C88620C73BECC3 /* CustomExercise.swift in Sources */,
 				8CE6E42C59FDC029364855C3 /* DayRecord.swift in Sources */,
-				6C9D9EC9FF6C458463025118 /* Exercise.swift in Sources */,
 				9FC8F578FD1054CF37B5979C /* ExerciseRecord.swift in Sources */,
+				D422CACABF65100C249EDE13 /* ExerciseType.swift in Sources */,
+				24694E4EACCE362E406B1122 /* FastingSettings.swift in Sources */,
 				5638B5D6422176C38C44D0E9 /* GenkiDoWidget.swift in Sources */,
 				99A398B352914F9C7A050B72 /* Meal.swift in Sources */,
 			);

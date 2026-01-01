@@ -11,7 +11,21 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section {
-                    Toggle("Tägliche Erinnerung", isOn: $reminderEnabled)
+                    NavigationLink {
+                        ExerciseSettingsView()
+                    } label: {
+                        Label("Exercises", systemImage: "figure.run")
+                    }
+
+                    NavigationLink {
+                        EatingWindowSettingsView()
+                    } label: {
+                        Label("Eating Window", systemImage: "clock")
+                    }
+                }
+
+                Section {
+                    Toggle("Daily Reminder", isOn: $reminderEnabled)
                         .onChange(of: reminderEnabled) { _, newValue in
                             Task {
                                 await handleReminderToggle(newValue)
@@ -20,7 +34,7 @@ struct SettingsView: View {
 
                     if reminderEnabled {
                         DatePicker(
-                            "Uhrzeit",
+                            "Time",
                             selection: $selectedTime,
                             displayedComponents: .hourAndMinute
                         )
@@ -34,27 +48,27 @@ struct SettingsView: View {
                         }
                     }
                 } header: {
-                    Text("Benachrichtigungen")
+                    Text("Notifications")
                 } footer: {
                     if reminderEnabled {
-                        Text("Du wirst täglich um \(reminderHour):\(String(format: "%02d", reminderMinute)) Uhr erinnert.")
+                        Text("You will be reminded daily at \(reminderHour):\(String(format: "%02d", reminderMinute)).")
                     }
                 }
 
                 if notificationStatus == .denied {
                     Section {
-                        Button("Einstellungen öffnen") {
+                        Button("Open Settings") {
                             if let url = URL(string: UIApplication.openSettingsURLString) {
                                 UIApplication.shared.open(url)
                             }
                         }
                     } footer: {
-                        Text("Benachrichtigungen sind deaktiviert. Aktiviere sie in den Einstellungen.")
+                        Text("Notifications are disabled. Enable them in Settings.")
                             .foregroundStyle(.orange)
                     }
                 }
             }
-            .navigationTitle("Einstellungen")
+            .navigationTitle("Settings")
             .onAppear {
                 setupInitialTime()
                 Task {

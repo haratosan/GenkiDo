@@ -5,10 +5,12 @@ import Observation
 final class FoodViewModel {
     var selectedDate: Date = .now
 
-    static let fastingCutoffHour = 18
-
     var isFastingTime: Bool {
-        Calendar.current.component(.hour, from: .now) >= Self.fastingCutoffHour
+        FastingSettings.isFastingTimeNow
+    }
+
+    var currentFastingCutoffHour: Int {
+        FastingSettings.cutoffHour(for: .now)
     }
 
     var startOfSelectedDay: Date {

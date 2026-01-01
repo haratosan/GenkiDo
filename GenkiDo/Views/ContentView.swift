@@ -10,17 +10,17 @@ struct ContentView: View {
 
             FoodTrackingView()
                 .tabItem {
-                    Label("Essen", systemImage: "fork.knife")
+                    Label("Food", systemImage: "fork.knife")
                 }
 
             HistoryView()
                 .tabItem {
-                    Label("Verlauf", systemImage: "calendar")
+                    Label("History", systemImage: "calendar")
                 }
 
             SettingsView()
                 .tabItem {
-                    Label("Einstellungen", systemImage: "gearshape")
+                    Label("Settings", systemImage: "gearshape")
                 }
         }
     }

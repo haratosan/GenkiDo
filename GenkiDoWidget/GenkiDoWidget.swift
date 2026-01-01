@@ -29,33 +29,57 @@ struct GenkiDoWidgetProvider: TimelineProvider {
     private func fetchTodayData() -> GenkiDoWidgetEntry {
         let today = Calendar.current.startOfDay(for: .now)
         var completedCount = 0
-        var hasMealAfterCutoff = false
+        var totalCount = 5
+        var hasMealOutsideWindow = false
 
         do {
             let container = try ModelContainer(
-                for: ExerciseRecord.self, Meal.self,
+                for: ExerciseRecord.self, Meal.self, CustomExercise.self,
                 configurations: ModelConfiguration(
                     groupContainer: .identifier("group.ch.budo-team.GenkiDo")
                 )
             )
             let context = ModelContext(container)
 
-            // Fetch exercises
-            let exerciseDescriptor = FetchDescriptor<ExerciseRecord>(
-                predicate: #Predicate { $0.date == today }
+            // Fetch active custom exercises
+            let customExerciseDescriptor = FetchDescriptor<CustomExercise>(
+                predicate: #Predicate { $0.isActive },
+                sortBy: [SortDescriptor(\.sortOrder)]
             )
-            let exercises = try context.fetch(exerciseDescriptor)
-            completedCount = exercises.filter { $0.count >= 50 }.count
+            let customExercises = try context.fetch(customExerciseDescriptor)
 
-            // Fetch meals
+            if !customExercises.isEmpty {
+                totalCount = customExercises.count
+
+                // Fetch today's exercise records
+                let exerciseDescriptor = FetchDescriptor<ExerciseRecord>(
+                    predicate: #Predicate { $0.date == today }
+                )
+                let exerciseRecords = try context.fetch(exerciseDescriptor)
+
+                // Count completed exercises
+                completedCount = customExercises.filter { exercise in
+                    let exerciseId = exercise.id.uuidString
+                    guard let record = exerciseRecords.first(where: { $0.exerciseType == exerciseId }) else {
+                        return false
+                    }
+
+                    switch exercise.exerciseType {
+                    case .done:
+                        return record.count > 0
+                    case .reps, .timed:
+                        return record.isCompleted(goal: exercise.goal)
+                    }
+                }.count
+            }
+
+            // Fetch meals and check eating window
             let dayEnd = Calendar.current.date(byAdding: .day, value: 1, to: today)!
             let mealDescriptor = FetchDescriptor<Meal>(
                 predicate: #Predicate { $0.timestamp >= today && $0.timestamp < dayEnd }
             )
             let meals = try context.fetch(mealDescriptor)
-            hasMealAfterCutoff = meals.contains { meal in
-                Calendar.current.component(.hour, from: meal.timestamp) >= 18
-            }
+            hasMealOutsideWindow = meals.contains { $0.isOutsideEatingWindow }
         } catch {
             print("Widget fetch error: \(error)")
         }
@@ -63,8 +87,8 @@ struct GenkiDoWidgetProvider: TimelineProvider {
         return GenkiDoWidgetEntry(
             date: .now,
             completedExercises: completedCount,
-            totalExercises: 5,
-            hasMealAfterCutoff: hasMealAfterCutoff
+            totalExercises: totalCount,
+            hasMealAfterCutoff: hasMealOutsideWindow
         )
     }
 }
@@ -98,7 +122,7 @@ struct GenkiDoWidgetEntryView: View {
                 .font(.title)
                 .fontWeight(.bold)
 
-            Text("Übungen")
+            Text("Exercises")
                 .font(.caption)
                 .foregroundStyle(.secondary)
 
@@ -118,7 +142,7 @@ struct GenkiDoWidgetEntryView: View {
                     .font(.system(size: 40))
                     .foregroundStyle(isComplete ? .green : .blue)
 
-                Text(isComplete ? "Geschafft!" : "Weiter so!")
+                Text(isComplete ? "Complete!" : "Keep going!")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -137,7 +161,7 @@ struct GenkiDoWidgetEntryView: View {
                     .tint(entry.completedExercises == entry.totalExercises ? .green : .blue)
 
                 HStack {
-                    Text("Fasten")
+                    Text("Fasting")
                         .font(.headline)
                     Spacer()
                     Image(systemName: entry.hasMealAfterCutoff ? "xmark.circle.fill" : "checkmark.circle.fill")
@@ -159,7 +183,7 @@ struct GenkiDoWidget: Widget {
             GenkiDoWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("GenkiDo")
-        .description("Tagesstatus für Fitness und Fasten")
+        .description("Daily fitness and fasting status")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
