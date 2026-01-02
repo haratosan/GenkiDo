@@ -24,6 +24,7 @@
 		5638B5D6422176C38C44D0E9 /* GenkiDoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E877506F41DB3ECF3452313 /* GenkiDoWidget.swift */; };
 		5DAA230E08A2169CB0E7450D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3D617A02B4D06D700B0318 /* Assets.xcassets */; };
 		6A16B7E912D288A870232F77 /* ExerciseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62E3ACA7B141CBE5D4C49D /* ExerciseRecord.swift */; };
+		775E698557F8EBB2207CA02A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 25F5C80C873DAFAE64449314 /* PrivacyInfo.xcprivacy */; };
 		7C9028C6D5D7A2257878629A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B32741E55A675A0A1256D /* HistoryView.swift */; };
 		8C2F9AB390DCAE80960D8326 /* FitnessTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D805926B21ECF0C327514 /* FitnessTrackingView.swift */; };
 		8CE6E42C59FDC029364855C3 /* DayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA94CB736085E5322579D614 /* DayRecord.swift */; };
@@ -85,6 +86,7 @@
 		05BDF4DFB82DF9791BCFBCD6 /* EatingWindowSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatingWindowSettingsView.swift; sourceTree = "<group>"; };
 		06E0E6FD858318B30E643330 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		179EAA4AAA2D2A029BDA7360 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		25F5C80C873DAFAE64449314 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		2CB536A9C064CCDCC9ECB0FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		33218DDCC48ACEE1A8A98862 /* GenkiDoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GenkiDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		333C8728C4A42AFC468B1063 /* GenkiDoWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = GenkiDoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				378580200AB5F3123672CC79 /* GenkiDo.entitlements */,
+				25F5C80C873DAFAE64449314 /* PrivacyInfo.xcprivacy */,
 				485C961A39952805A0C68A59 /* App */,
 				0481AB48BBAB295E57DACF08 /* Models */,
 				4E71644E4C2686DCB2979D5B /* Resources */,
@@ -406,11 +409,11 @@
 			};
 			buildConfigurationList = 62AF5E240D7A6700F107BD76 /* Build configuration list for PBXProject "GenkiDo" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = de;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				de,
+				en,
 			);
 			mainGroup = 60B73981187AF80522CF592D;
 			minimizedProjectReferenceProxies = 1;
@@ -432,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DAA230E08A2169CB0E7450D /* Assets.xcassets in Resources */,
+				775E698557F8EBB2207CA02A /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,11 +724,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X9FHM3F6WK;
 				INFOPLIST_KEY_CFBundleDisplayName = GenkiDo;
-				INFOPLIST_KEY_NSCameraUsageDescription = "GenkiDo benötigt Kamerazugriff um Mahlzeiten zu fotografieren";
+				INFOPLIST_KEY_NSCameraUsageDescription = "GenkiDo needs camera access to photograph your meals";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				ITSAppUsesNonExemptEncryption = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -732,7 +738,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDo";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -762,11 +768,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X9FHM3F6WK;
 				INFOPLIST_KEY_CFBundleDisplayName = GenkiDo;
-				INFOPLIST_KEY_NSCameraUsageDescription = "GenkiDo benötigt Kamerazugriff um Mahlzeiten zu fotografieren";
+				INFOPLIST_KEY_NSCameraUsageDescription = "GenkiDo needs camera access to photograph your meals";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				ITSAppUsesNonExemptEncryption = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -774,7 +782,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.budo-team.GenkiDo";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};

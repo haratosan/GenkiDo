@@ -4,7 +4,7 @@ options:
   deploymentTarget:
     iOS: "26.0"
   xcodeVersion: "16.0"
-  developmentLanguage: de
+  developmentLanguage: en
 
 settings:
   base:
@@ -31,8 +31,11 @@ targets:
         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
-        INFOPLIST_KEY_NSCameraUsageDescription: "GenkiDo benötigt Kamerazugriff um Mahlzeiten zu fotografieren"
+        INFOPLIST_KEY_UIRequiresFullScreen: YES
+        TARGETED_DEVICE_FAMILY: 1
+        INFOPLIST_KEY_NSCameraUsageDescription: "GenkiDo needs camera access to photograph your meals"
         INFOPLIST_KEY_CFBundleDisplayName: GenkiDo
+        ITSAppUsesNonExemptEncryption: NO
         SWIFT_EMIT_LOC_STRINGS: YES
     entitlements:
       path: GenkiDo/GenkiDo.entitlements
@@ -56,6 +59,10 @@ targets:
         group: Services
     info:
       path: GenkiDoWidget/Info.plist
+      properties:
+        CFBundleDisplayName: GenkiDo Widget
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: ch.budo-team.GenkiDo.widget
